@@ -27,24 +27,33 @@ public abstract class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     protected Integer id;
+
     @Column(nullable = false)
     protected String nome;
+
     @CPF(message = "Forneça um CPF válido")
     @Column(unique = true, nullable = false)
     protected String cpf;
+
     protected String matricula;
+
     @Column(nullable = false)
     protected String telefone;
+
     @Email(message = "Forneça um e-mail válido")
     @Column(unique = true, nullable = false)
     protected String email;
+
     protected String endereco;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "Perfis")
     protected Set<Integer> perfis = new HashSet<>();
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     protected String senha;
+
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
