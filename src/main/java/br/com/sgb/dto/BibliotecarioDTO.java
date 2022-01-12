@@ -3,6 +3,7 @@ package br.com.sgb.dto;
 import br.com.sgb.model.Bibliotecario;
 import br.com.sgb.model.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,6 +41,7 @@ public class BibliotecarioDTO implements Serializable {
 
     protected Set<Integer> perfis = new HashSet<>();
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotNull(message = "O campo SENHA é obrigatório")
     protected String senha;
 

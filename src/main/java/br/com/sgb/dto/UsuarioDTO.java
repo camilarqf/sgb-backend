@@ -41,10 +41,10 @@ public class UsuarioDTO implements Serializable {
 
     protected Set<Integer> perfis = new HashSet<>();
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotNull(message = "O campo SENHA é obrigatório")
     protected String senha;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
