@@ -1,4 +1,4 @@
-package br.com.siscon.config;
+package br.com.sgb.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
